@@ -1,9 +1,0 @@
-# BEGIN RAHENDZ
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^.*$ https://github.com/rahendz/$1 [L]
-</IfModule>
-# END RAHENDZ
