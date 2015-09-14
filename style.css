@@ -20,14 +20,162 @@ a:hover {
   -moz-transition: color 0.25s ease-out, background-color 0.25s ease-out;
   transition: color 0.25s ease-out, background-color 0.25s ease-out;
 }
-header.master-head {
+.aside-toggle {
+  background-color: #999999;
+  border: none;
+  left: 0;
   position: fixed;
+  padding: 10px;
+  margin: 15px;
+  z-index: 9999;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  -webkit-transition: left 0.5s ease-out 0.2s;
+  -moz-transition: left 0.5s ease-out 0.2s;
+  transition: left 0.5s ease-out 0.2s;
+}
+.aside-toggle.in {
+  left: 250px;
+  -webkit-transition: left 0.5s ease-out 0.2s;
+  -moz-transition: left 0.5s ease-out 0.2s;
+  transition: left 0.5s ease-out 0.2s;
+  background-color: #883333;
+}
+.aside-toggle > .icon-bar {
+  background-color: white;
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+.aside-toggle > .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+.aside-toggle.toggled > .icon-bar {
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+.aside-toggle.toggled > .icon-bar:first-child {
+  margin: -5px 0 0;
+  -webkit-transform: translateY(11px) rotate(45deg);
+  -moz-transform: translateY(11px) rotate(45deg);
+  transform: translateY(11px) rotate(45deg);
+}
+.aside-toggle.toggled > .icon-bar:nth-child(2) {
+  opacity: 0;
+}
+.aside-toggle.toggled > .icon-bar:last-child {
+  margin: 6px 0 3px;
+  -webkit-transform: translateY(-3px) rotate(-45deg);
+  -moz-transform: translateY(-3px) rotate(-45deg);
+  transform: translateY(-3px) rotate(-45deg);
+}
+.aside-overlay {
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: 0;
   width: 100%;
-  z-index: 99;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+.aside-overlay.in {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+aside.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  min-height: 480px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  -webkit-transition: left 0.5s ease-out 0.2s;
+  -moz-transition: left 0.5s ease-out 0.2s;
+  transition: left 0.5s ease-out 0.2s;
+}
+aside.sidebar.in {
+  left: 0;
+  -webkit-transition: left 0.5s ease-out 0.2s;
+  -moz-transition: left 0.5s ease-out 0.2s;
+  transition: left 0.5s ease-out 0.2s;
+}
+aside.sidebar > nav.navbar {
+  margin: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  height: auto;
+  box-shadow: none;
+}
+header.master-banner {
+  height: 100%;
+}
+header.master-banner > .content-wrapper {
+  height: 100%;
+  width: 100%;
+  display: table;
+}
+header.master-banner > .content-wrapper > .content {
+  display: table-cell;
+  vertical-align: middle;
+}
+header.master-banner > .content-wrapper > .content > img.avatar {
+  margin-bottom: 40px;
+  width: 200px;
+  background-color: #ffffff;
+  padding: 3px;
+  border-radius: 100%;
+}
+@media (max-width: 767px) {
+  header.master-banner > .content-wrapper > .content > img.avatar {
+    width: 25%;
+    margin-bottom: 20px;
+  }
+}
+header.master-banner > .content-wrapper > .content > h1 {
+  color: #999999;
+  font-size: 8rem;
+  font-family: "LatoThin", Verdana, Helvetica, Serif, Arial;
+}
+header.master-banner > .content-wrapper > .content > h1 > span {
+  color: #555555;
+}
+header.master-banner > .content-wrapper > .content > h1 > oneline {
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  header.master-banner > .content-wrapper > .content > h1 {
+    font-size: 5rem;
+  }
+}
+header.master-banner > .content-wrapper > .content > h3 {
+  color: #883333;
+}
+header.master-banner > .content-wrapper > .content > h3 > span {
+  color: #999999;
+}
+@media (max-width: 767px) {
+  header.master-banner > .content-wrapper > .content > h3 {
+    font-size: 1.8rem;
+  }
 }
 .navbar {
   min-height: auto;
-  margin-top: 30px;
 }
 .navbar .navbar-collapse {
   padding: 0;
@@ -68,9 +216,6 @@ header.master-head {
 section {
   height: 100%;
 }
-section > article {
-  height: 100%;
-}
 section > article > div.content-wrapper {
   padding: 100px 0;
   display: table;
@@ -85,6 +230,9 @@ section > article > div.content-wrapper > div.content {
   section > article > div.content-wrapper {
     padding: 30px 0;
   }
+}
+section > article#home {
+  height: 100%;
 }
 section > article#home > div.content-wrapper > div.content > img.avatar {
   margin-bottom: 40px;
