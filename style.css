@@ -80,7 +80,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   opacity: 0;
   -webkit-transition: opacity 0.2s linear;
   -moz-transition: opacity 0.2s linear;
@@ -102,17 +102,18 @@ aside.sidebar {
   height: 100%;
   overflow-y: auto;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
   z-index: 999;
-  -webkit-transition: left 0.5s ease-out 0.2s;
-  -moz-transition: left 0.5s ease-out 0.2s;
-  transition: left 0.5s ease-out 0.2s;
+  -webkit-transition: left 0.5s ease-out 0.2s, box-shadow 0.5s ease-out 0.2s;
+  -moz-transition: left 0.5s ease-out 0.2s, box-shadow 0.5s ease-out 0.2s;
+  transition: left 0.5s ease-out 0.2s, box-shadow 0.5s ease-out 0.2s;
 }
 aside.sidebar.in {
   left: 0;
-  -webkit-transition: left 0.5s ease-out 0.2s;
-  -moz-transition: left 0.5s ease-out 0.2s;
-  transition: left 0.5s ease-out 0.2s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -webkit-transition: left 0.5s ease-out 0.2s, box-shadow 0.5s ease-out 0.2s;
+  -moz-transition: left 0.5s ease-out 0.2s, box-shadow 0.5s ease-out 0.2s;
+  transition: left 0.5s ease-out 0.2s, box-shadow 0.5s ease-out 0.2s;
 }
 aside.sidebar > nav.navbar {
   margin: 0;
@@ -143,7 +144,7 @@ header.master-banner > .content-wrapper > .content > img.avatar {
 }
 @media (max-width: 767px) {
   header.master-banner > .content-wrapper > .content > img.avatar {
-    width: 25%;
+    width: 33.3%;
     margin-bottom: 20px;
   }
 }
@@ -169,6 +170,9 @@ header.master-banner > .content-wrapper > .content > h3 {
 header.master-banner > .content-wrapper > .content > h3 > span {
   color: #999999;
 }
+header.master-banner > .content-wrapper > .content > h3 > as {
+  white-space: nowrap;
+}
 @media (max-width: 767px) {
   header.master-banner > .content-wrapper > .content > h3 {
     font-size: 1.8rem;
@@ -188,6 +192,14 @@ header.master-banner > .content-wrapper > .content > h3 > span {
 }
 .navbar .nav-justified > li.active > a {
   background-color: #eeeeee;
+}
+.navbar .nav-pills > li.active > a {
+  background-color: #999999;
+  color: white;
+}
+.navbar .nav-pills > li > a {
+  border-radius: 0;
+  color: #555555;
 }
 @media (max-width: 767px) {
   .navbar {
@@ -216,62 +228,15 @@ header.master-banner > .content-wrapper > .content > h3 > span {
 section {
   height: 100%;
 }
+section > article {
+  min-height: 100%;
+}
 section > article > div.content-wrapper {
   padding: 100px 0;
-  display: table;
-  height: 100%;
-}
-section > article > div.content-wrapper > div.content {
-  display: table-cell;
-  height: 100%;
-  vertical-align: middle;
 }
 @media (max-width: 767px) {
   section > article > div.content-wrapper {
-    padding: 30px 0;
-  }
-}
-section > article#home {
-  height: 100%;
-}
-section > article#home > div.content-wrapper > div.content > img.avatar {
-  margin-bottom: 40px;
-  width: 200px;
-  background-color: #ffffff;
-  padding: 3px;
-  border-radius: 100%;
-}
-@media (max-width: 767px) {
-  section > article#home > div.content-wrapper > div.content > img.avatar {
-    width: 25%;
-    margin-bottom: 20px;
-  }
-}
-section > article#home > div.content-wrapper > div.content > h1 {
-  color: #999999;
-  font-size: 8rem;
-  font-family: "LatoThin", Verdana, Helvetica, Serif, Arial;
-}
-section > article#home > div.content-wrapper > div.content > h1 > span {
-  color: #555555;
-}
-section > article#home > div.content-wrapper > div.content > h1 > oneline {
-  white-space: nowrap;
-}
-@media (max-width: 767px) {
-  section > article#home > div.content-wrapper > div.content > h1 {
-    font-size: 5rem;
-  }
-}
-section > article#home > div.content-wrapper > div.content > h3 {
-  color: #883333;
-}
-section > article#home > div.content-wrapper > div.content > h3 > span {
-  color: #999999;
-}
-@media (max-width: 767px) {
-  section > article#home > div.content-wrapper > div.content > h3 {
-    font-size: 1.8rem;
+    padding: 60px 0;
   }
 }
 section > article#aboutme > div.content-wrapper > div.content > p {
@@ -288,17 +253,29 @@ section > article#aboutme > div.content-wrapper > div.content > p {
     margin: 0 15px 20px;
   }
 }
-section > article#aboutme > div.content-wrapper > div.content > ul {
-  list-style: none;
-}
-section > article#aboutme > div.content-wrapper > div.content > ul > li {
+section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] {
   font-size: 2rem;
   font-family: 'LatoLight', Verdana, Helvetica, Serif, Arial;
-}
-section > article#aboutme > div.content-wrapper > div.content > ul > li > i.fa {
+  background-color: #883333;
   color: white;
-  background-color: #999999;
-  padding: 6px 7px 8px;
+}
+section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] > p {
+  margin: 0;
+  padding: 10px 20px;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] > p {
+    font-size: 1.2rem;
+  }
+}
+section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] > p > i.fa {
+  color: #883333;
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 7px;
+  min-width: 32px;
+  background-color: white;
   border-radius: 100%;
-  font-size: 1.5rem;
+  float: left;
 }
