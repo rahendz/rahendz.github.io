@@ -92,6 +92,7 @@ a:hover {
   -webkit-transition: opacity 0.2s linear;
   -moz-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
+  z-index: 9;
 }
 aside.sidebar {
   position: fixed;
@@ -239,6 +240,76 @@ section > article > div.content-wrapper {
     padding: 60px 0;
   }
 }
+section > article > div.content-wrapper > .content {
+  text-align: center;
+}
+section > article > div.content-wrapper > .content > .content-icon {
+  background-color: #999999;
+  border-radius: 100%;
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+}
+@media (max-width: 767px) {
+  section > article > div.content-wrapper > .content > .content-icon {
+    height: 40px;
+    width: 40px;
+  }
+}
+section > article > div.content-wrapper > .content > .content-icon > .fa {
+  color: white;
+  font-size: 3rem;
+}
+@media (max-width: 767px) {
+  section > article > div.content-wrapper > .content > .content-icon > .fa {
+    font-size: 2rem;
+  }
+}
+section > article > div.content-wrapper > .content > .content-icon > .fa:before {
+  line-height: 2;
+}
+section > article > div.content-wrapper > .content > .content-title {
+  font-family: "LatoLight", Verdana, Helvetica, Serif, Arial;
+  color: #999999;
+  margin-bottom: 60px;
+}
+@media (max-width: 767px) {
+  section > article > div.content-wrapper > .content > .content-title {
+    font-size: 2.2rem;
+  }
+}
+section > article > div.content-wrapper > .content > .content-title > span {
+  color: #883333;
+}
+section > article > div.content-wrapper > .content > #progress > .label {
+  font-size: 2rem;
+  color: #883333;
+  font-family: "LatoLight", Verdana, Helvetica, Serif, Arial;
+  text-align: right;
+}
+section > article > div.content-wrapper > .content > #progress > .bar > .progress {
+  border-radius: 0;
+  background: #eeeeee;
+  height: 30px;
+}
+section > article > div.content-wrapper > .content > #progress > .bar > .progress .progress-bar {
+  background: #555555;
+}
+section > article > div.content-wrapper > .content > #progress > .bar > .progress .progress-bar > span {
+  font-size: 1.6rem;
+  font-family: "LatoLight", Verdana, Helvetica, Serif, Arial;
+  line-height: 2.9rem;
+}
+section > article > div.content-wrapper > .content > .separator {
+  background: transparent url('images/separator.png') no-repeat center center / 40% auto;
+  height: 78px;
+  margin: 30px 0;
+}
+@media (max-width: 767px) {
+  section > article > div.content-wrapper > .content > .separator {
+    background-size: 300px auto;
+  }
+}
 section > article#aboutme > div.content-wrapper > div.content > p {
   font-size: 2rem;
   font-family: 'LatoLight', Verdana, Helvetica, Serif, Arial;
@@ -254,20 +325,16 @@ section > article#aboutme > div.content-wrapper > div.content > p {
   }
 }
 section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: 'LatoLight', Verdana, Helvetica, Serif, Arial;
-  background-color: #883333;
   color: white;
+  margin-bottom: 15px;
 }
 section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] > p {
+  background-color: #883333;
   margin: 0;
   padding: 10px 20px;
-  text-align: center;
-}
-@media (max-width: 767px) {
-  section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] > p {
-    font-size: 1.2rem;
-  }
+  text-align: left;
 }
 section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] > p > i.fa {
   color: #883333;
@@ -278,4 +345,10 @@ section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] > p
   background-color: white;
   border-radius: 100%;
   float: left;
+  margin-top: -3px;
+  margin-right: 5px;
+}
+section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] > p > i.fa ~ a {
+  color: white;
+  text-decoration: none;
 }
