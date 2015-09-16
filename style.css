@@ -324,19 +324,22 @@ section > article#aboutme > div.content-wrapper > div.content > p {
     margin: 0 15px 20px;
   }
 }
-section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] {
+section > article#aboutme > div.content-wrapper > div.content > #detail {
+  padding: 30px 0;
+}
+section > article#aboutme > div.content-wrapper > div.content > #detail > div[id*="my-"] {
   font-size: 1.8rem;
   font-family: 'LatoLight', Verdana, Helvetica, Serif, Arial;
   color: white;
   margin-bottom: 15px;
 }
-section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] > p {
+section > article#aboutme > div.content-wrapper > div.content > #detail > div[id*="my-"] > p {
   background-color: #883333;
   margin: 0;
   padding: 10px 20px;
   text-align: left;
 }
-section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] > p > i.fa {
+section > article#aboutme > div.content-wrapper > div.content > #detail > div[id*="my-"] > p > i.fa {
   color: #883333;
   text-align: center;
   font-size: 1.8rem;
@@ -348,7 +351,7 @@ section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] > p
   margin-top: -3px;
   margin-right: 5px;
 }
-section > article#aboutme > div.content-wrapper > div.content div[id*="my-"] > p > i.fa ~ a {
+section > article#aboutme > div.content-wrapper > div.content > #detail > div[id*="my-"] > p > i.fa ~ a {
   color: white;
   text-decoration: none;
 }
