@@ -13,6 +13,11 @@ body {
   font-family: "Lato", Verdana, Helvetica, Serif, Arial;
   position: relative;
 }
+@media (max-width: 767px) {
+  .row {
+    margin: 0;
+  }
+}
 a:link,
 a:focus,
 a:hover {
@@ -145,7 +150,7 @@ header.master-banner > .content-wrapper > .content > img.avatar {
 }
 @media (max-width: 767px) {
   header.master-banner > .content-wrapper > .content > img.avatar {
-    width: 33.3%;
+    width: 50%;
     margin-bottom: 20px;
   }
 }
@@ -162,7 +167,7 @@ header.master-banner > .content-wrapper > .content > h1 > oneline {
 }
 @media (max-width: 767px) {
   header.master-banner > .content-wrapper > .content > h1 {
-    font-size: 5rem;
+    font-size: 3.3rem;
   }
 }
 header.master-banner > .content-wrapper > .content > h3 {
@@ -176,7 +181,8 @@ header.master-banner > .content-wrapper > .content > h3 > as {
 }
 @media (max-width: 767px) {
   header.master-banner > .content-wrapper > .content > h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    line-height: 2.7rem;
   }
 }
 .navbar {
@@ -299,6 +305,13 @@ section > article > div.content-wrapper > .content > #progress > .bar > .progres
   font-size: 1.6rem;
   font-family: "LatoLight", Verdana, Helvetica, Serif, Arial;
   line-height: 2.9rem;
+  padding: 0 10px;
+  white-space: nowrap;
+  color: white;
+  mix-blend-mode: difference;
+  position: absolute;
+  width: 100%;
+  left: 0;
 }
 section > article > div.content-wrapper > .content > .separator {
   background: transparent url('images/separator.png') no-repeat center center / 40% auto;
@@ -309,6 +322,40 @@ section > article > div.content-wrapper > .content > .separator {
   section > article > div.content-wrapper > .content > .separator {
     background-size: 300px auto;
   }
+}
+section > article > div.content-wrapper > .content > .download-link {
+  margin-bottom: 20px;
+}
+section > article > div.content-wrapper > .content > .download-link > a {
+  border: 2px solid #999999;
+  padding: 5px 20px;
+  display: inline-block;
+  margin: 10px;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  text-decoration: none;
+  color: #883333;
+}
+section > article > div.content-wrapper > .content > .download-link > a:hover,
+section > article > div.content-wrapper > .content > .download-link > a:focus {
+  border: 2px solid #883333;
+  background-color: #883333;
+  color: white;
+}
+section > article > div.content-wrapper > .content > ul > li {
+  font-size: 2rem;
+  line-height: 3.6rem;
+  font-family: "LatoLight", Verdana, Helvetica, Serif, Arial;
+  color: #999999;
+}
+section > article > div.content-wrapper > .content > ul > li > strong {
+  color: #555555;
+}
+section > article > div.content-wrapper > .content > ul > li > span {
+  color: #883333;
+}
+section > article > div.content-wrapper > .content > ul > li > em {
+  color: #555555;
 }
 section > article#aboutme > div.content-wrapper > div.content > p {
   font-size: 2rem;
