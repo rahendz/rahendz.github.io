@@ -96,3 +96,7 @@
 		clear: both;
 	}
 }
+
+.clear-none {
+	clear: none !important;
+}
