@@ -1,29 +1,28 @@
----
+# Site settings
 title: Rahendz Blog
-timezone: Asia/Jakarta
-collections:
-  posts:
-    title: Posts
-    output: true
-  uploads:
-    title: Uploads
-    output: true
 email: rahendz@gmail.com
-description: 'Prefer coffee and smoking rather than tea and a biscuit. I love my family
-  and friends. Love hang-out with friends and foe, especially camping or backpacking
-  anyplace, anywhere. Mostly for find some inspiration, killing times and cooling
-  down the brain. Im'' tipically a Friendly, Outgoing and Responsive Personality.
-  Enthusiastic, Consciensious and Hardworking also an Independent and Team Worker
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
 
-'
-baseurl: 
-url: 
+# User setting
+owner: rahendz
+email: rahendz@gmail.com
+facebook_username: rahendz
 twitter_username: rahendz
 github_username: rahendz
+address:
+  - line: Ngampilan NG I/331
+  - line: Yogyakarta, Indonesia, 55261
+  # Feel free to add more lines here
+telephone: 62-896-7180-1516
+copyright: @ 2017 rahendz
+
+# API settings
+google_api_key:
+
+# Build settings
 markdown: kramdown
-theme: minima
-gems:
-- jekyll-feed
-exclude:
-- Gemfile
-- Gemfile.lock
