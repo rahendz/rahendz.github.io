@@ -15,14 +15,13 @@ facebook_username: rahendz
 twitter_username: rahendz
 github_username: rahendz
 address:
-  - line: Ngampilan NG I/331
-  - line: Yogyakarta, Indonesia, 55261
+  - line: rahendzlab
   # Feel free to add more lines here
 telephone: 62-896-7180-1516
-copyright: @ 2017 rahendz
+copyright: 2017 rahendz
 
 # API settings
-google_api_key:
+google_api_key: AIzaSyAp5cKSXQwmZ67u7mqQdHxYTlX1Nj7ieP0
 
 # Build settings
 markdown: kramdown
