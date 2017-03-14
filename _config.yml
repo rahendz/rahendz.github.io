@@ -1,6 +1,6 @@
 ---
 title: Rahendz Blog
-timezone: UTC
+timezone: Asia/Jakarta
 collections:
   posts:
     title: Posts
@@ -16,8 +16,8 @@ description: 'Prefer coffee and smoking rather than tea and a biscuit. I love my
   Enthusiastic, Consciensious and Hardworking also an Independent and Team Worker
 
 '
-baseurl: ''
-url: ''
+baseurl: 
+url: 
 twitter_username: rahendz
 github_username: rahendz
 markdown: kramdown
