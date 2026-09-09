@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+
+const projects = [
+  {
+    title: 'E-Commerce Platform',
+    desc: 'End-to-end design system and frontend build for a premium fashion marketplace. 40+ components, dark mode, responsive.',
+    tags: ['Design System', 'Astro', 'React'],
+    image: 'rahendra-ecom',
+    year: '2026',
+  },
+  {
+    title: 'SaaS Dashboard',
+    desc: 'Real-time analytics dashboard with complex data visualizations, role-based access, and micro-interactions.',
+    tags: ['UI Design', 'React', 'Motion'],
+    image: 'rahendra-saas',
+    year: '2025',
+  },
+  {
+    title: 'Brand Identity & Web',
+    desc: 'Complete brand identity and marketing site for a climate-tech startup. From logo to launch.',
+    tags: ['Branding', 'Figma', 'Astro'],
+    image: 'rahendra-brand',
+    year: '2025',
+  },
+  {
+    title: 'Design System Docs',
+    desc: 'Internal documentation platform for a design system serving 12 product teams. Interactive component playground.',
+    tags: ['Documentation', 'Storybook', 'MDX'],
+    image: 'rahendra-docs',
+    year: '2024',
+  },
+];
+---
+
+<Base title="Work — Rahendra Putra" description="Selected projects by Rahendra Putra.">
+
+  {/* ── PORTFOLIO HERO ── */}
+  <section class="min-h-[50dvh] flex items-end section-gap">
+    <div class="container-wide px-6 pt-32 pb-8">
+      <p class="text-xs font-mono uppercase tracking-[0.2em] mb-6" style={`color: var(--c-muted);`} data-reveal>Portfolio</p>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.95]" data-reveal>
+        <span style={`color: var(--c-text);`}>Selected Work</span>
+      </h1>
+      <p class="text-lg md:text-xl mt-6 max-w-[55ch] leading-relaxed" style={`color: var(--c-text-secondary);`} data-reveal>
+        Projects spanning design systems, frontend architecture, and brand experiences. Each built with intention.
+      </p>
+    </div>
+  </section>
+
+  {/* ── PROJECT GRID ── */}
+  <section class="section-gap">
+    <div class="container-wide px-6">
+      <div class="space-y-16">
+        {projects.map((project, i) => (
+          <article class="group grid grid-cols-1 lg:grid-cols-12 gap-8 items-center" data-reveal>
+            {/* Image - alternating sides */}
+            <div class:list={['lg:col-span-7', i % 2 === 1 && 'lg:order-2']}>
+              <div class="aspect-[16/10] rounded-xl overflow-hidden" style={`background: var(--c-surface);`}>
+                <img
+                  src={`https://picsum.photos/seed/${project.image}/1200/750`}
+                  alt={project.title}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div class:list={['lg:col-span-5', i % 2 === 1 && 'lg:order-1']}>
+              <span class="text-xs font-mono" style={`color: var(--c-muted);`}>{project.year}</span>
+              <h2 class="text-2xl md:text-3xl font-bold tracking-tight mt-2" style={`color: var(--c-text);`}>{project.title}</h2>
+              <p class="text-sm mt-3 leading-relaxed" style={`color: var(--c-text-secondary);`}>{project.desc}</p>
+              <div class="flex flex-wrap gap-2 mt-5">
+                {project.tags.map((tag) => (
+                  <span class="text-xs px-3 py-1.5 rounded-full border" style={`border-color: var(--c-border); color: var(--c-text-secondary);`}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ── CTA ── */}
+  <section class="section-gap" style={`background: var(--c-surface);`}>
+    <div class="container-narrow px-6 text-center" data-reveal>
+      <h2 class="text-4xl md:text-6xl font-bold tracking-tighter text-balance" style={`color: var(--c-text);`}>
+        Have a project in mind?
+      </h2>
+      <p class="text-lg mt-6 max-w-[50ch] mx-auto" style={`color: var(--c-text-secondary);`}>
+        I'm selectively available for projects that require both design thinking and engineering execution.
+      </p>
+      <a href="mailto:hello@rahendra.dev"
+         class="inline-flex items-center gap-2 text-sm font-medium px-8 py-4 rounded-full mt-10 transition-all hover:scale-[0.97] active:scale-[0.95]"
+         style={`background: var(--c-accent); color: var(--c-bg);`}>
+        Start a Conversation
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</Base>

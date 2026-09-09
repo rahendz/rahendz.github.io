@@ -1,0 +1,176 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Rahendra Putra — Designer & Frontend Engineer">
+
+  {/* ── GREETINGS / HERO ── */}
+  <section class="relative min-h-[100dvh] flex items-center overflow-hidden">
+    {/* Animated grid background */}
+    <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+      style="background-image: linear-gradient(var(--c-text) 1px, transparent 1px), linear-gradient(90deg, var(--c-text) 1px, transparent 1px); background-size: 60px 60px;">
+    </div>
+
+    <div class="container-wide px-6 pt-24 pb-16 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+        {/* Left: Content */}
+        <div class="lg:col-span-7" data-reveal>
+          <p class="text-xs font-mono uppercase tracking-[0.2em] mb-6" style={`color: var(--c-muted);`}>
+            Designer × Frontend Engineer
+          </p>
+
+          <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.95] text-balance">
+            <span style={`color: var(--c-text);`}>I build</span><br />
+            <span class="italic" style={`color: var(--c-text);`}>interfaces</span><br />
+            <span style={`color: var(--c-text);`}>that move.</span>
+          </h1>
+
+          <p class="text-lg md:text-xl mt-8 max-w-[48ch] leading-relaxed" style={`color: var(--c-text-secondary);`}>
+            Crafting premium digital experiences at the intersection of design systems and frontend engineering. Based in Jakarta, working globally.
+          </p>
+
+          <div class="flex items-center gap-4 mt-10">
+            <a href="/portfolio"
+               class="inline-flex items-center gap-2 text-sm font-medium px-6 py-3 rounded-full transition-all hover:scale-[0.97] active:scale-[0.95]"
+               style={`background: var(--c-accent); color: var(--c-bg);`}>
+              View Work
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a href="/about"
+               class="inline-flex items-center gap-2 text-sm font-medium px-6 py-3 rounded-full border transition-all hover:scale-[0.97] active:scale-[0.95]"
+               style={`border-color: var(--c-border); color: var(--c-text);`}>
+              About Me
+            </a>
+          </div>
+        </div>
+
+        {/* Right: Visual */}
+        <div class="lg:col-span-5 relative" data-reveal>
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden relative"
+               style={`background: var(--c-surface);`}>
+            <img
+              src="https://picsum.photos/seed/rahendra-portrait/800/1000"
+              alt="Rahendra Putra"
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+            {/* Subtle overlay */}
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+          </div>
+
+          {/* Floating accent card */}
+          <div class="absolute -bottom-6 -left-6 px-5 py-3 rounded-xl backdrop-blur-xl border"
+               style={`background: color-mix(in srgb, var(--c-surface) 80%, transparent); border-color: var(--c-border);`}>
+            <p class="text-xs font-mono" style={`color: var(--c-muted);`}>Currently available</p>
+            <p class="text-sm font-semibold mt-0.5" style={`color: var(--c-text);`}>Open for projects</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ── MARQUEE STRIP ── */}
+  <div class="overflow-hidden border-y py-4" style={`border-color: var(--c-border);`}>
+    <div class="flex whitespace-nowrap animate-marquee">
+      {['Design Systems', 'Frontend Architecture', 'React & Astro', 'Motion Design', 'UI Engineering', 'Figma to Code', 'Performance', 'Accessibility'].map((item) => (
+        <span class="mx-8 text-sm font-mono uppercase tracking-wider" style={`color: var(--c-muted);`}>
+          {item}
+          <span class="mx-4" style={`color: var(--c-border);`}>·</span>
+        </span>
+      ))}
+      {['Design Systems', 'Frontend Architecture', 'React & Astro', 'Motion Design', 'UI Engineering', 'Figma to Code', 'Performance', 'Accessibility'].map((item) => (
+        <span class="mx-8 text-sm font-mono uppercase tracking-wider" style={`color: var(--c-muted);`}>
+          {item}
+          <span class="mx-4" style={`color: var(--c-border);`}>·</span>
+        </span>
+      ))}
+    </div>
+  </div>
+
+  {/* ── SELECTED WORK PREVIEW ── */}
+  <section class="section-gap">
+    <div class="container-wide px-6">
+      <div class="flex items-end justify-between mb-12" data-reveal>
+        <div>
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tighter" style={`color: var(--c-text);`}>Selected Work</h2>
+          <p class="text-base mt-3 max-w-[48ch]" style={`color: var(--c-text-secondary);`}>A curated selection of projects I've designed and engineered.</p>
+        </div>
+        <a href="/portfolio" class="text-sm font-medium hidden md:inline-flex items-center gap-2 transition-colors hover:opacity-70" style={`color: var(--c-text-secondary);`}>
+          View All
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Project 1 */}
+        <a href="/portfolio" class="group block" data-reveal>
+          <div class="aspect-[16/10] rounded-xl overflow-hidden relative" style={`background: var(--c-surface);`}>
+            <img src="https://picsum.photos/seed/rahendra-proj1/1200/750" alt="Project 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="mt-4 flex items-start justify-between">
+            <div>
+              <h3 class="text-base font-semibold" style={`color: var(--c-text);`}>E-Commerce Platform</h3>
+              <p class="text-sm mt-1" style={`color: var(--c-text-secondary);`}>Design System · Frontend · Astro</p>
+            </div>
+            <span class="text-xs font-mono" style={`color: var(--c-muted);`}>2026</span>
+          </div>
+        </a>
+
+        {/* Project 2 */}
+        <a href="/portfolio" class="group block" data-reveal>
+          <div class="aspect-[16/10] rounded-xl overflow-hidden relative" style={`background: var(--c-surface);`}>
+            <img src="https://picsum.photos/seed/rahendra-proj2/1200/750" alt="Project 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="mt-4 flex items-start justify-between">
+            <div>
+              <h3 class="text-base font-semibold" style={`color: var(--c-text);`}>SaaS Dashboard</h3>
+              <p class="text-sm mt-1" style={`color: var(--c-text-secondary);`}>UI Design · React · Motion</p>
+            </div>
+            <span class="text-xs font-mono" style={`color: var(--c-muted);`}>2025</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* ── CTA ── */}
+  <section class="section-gap">
+    <div class="container-narrow px-6 text-center" data-reveal>
+      <h2 class="text-4xl md:text-6xl font-bold tracking-tighter text-balance" style={`color: var(--c-text);`}>
+        Let's build something<br />that matters.
+      </h2>
+      <p class="text-lg mt-6 max-w-[50ch] mx-auto" style={`color: var(--c-text-secondary);`}>
+        I'm selectively available for projects that require both design thinking and engineering execution.
+      </p>
+      <a href="mailto:hello@rahendra.dev"
+         class="inline-flex items-center gap-2 text-sm font-medium px-8 py-4 rounded-full mt-10 transition-all hover:scale-[0.97] active:scale-[0.95]"
+         style={`background: var(--c-accent); color: var(--c-bg);`}>
+        Start a Conversation
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+      animation: none;
+    }
+  }
+</style>

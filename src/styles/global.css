@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* ── Base tokens ── */
+@layer base {
+  :root {
+    --c-bg: #fafafa;
+    --c-surface: #f5f5f5;
+    --c-text: #0a0a0a;
+    --c-text-secondary: #525252;
+    --c-accent: #171717;
+    --c-accent-hover: #262626;
+    --c-border: #e5e5e5;
+    --c-muted: #a3a3a3;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --c-bg: #0a0a0a;
+      --c-surface: #171717;
+      --c-text: #fafafa;
+      --c-text-secondary: #a3a3a3;
+      --c-accent: #fafafa;
+      --c-accent-hover: #e5e5e5;
+      --c-border: #262626;
+      --c-muted: #525252;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light dark;
+  }
+
+  body {
+    background-color: var(--c-bg);
+    color: var(--c-text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--c-accent);
+    color: var(--c-bg);
+  }
+}
+
+/* ── Utility classes ── */
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .section-gap { padding-block: clamp(4rem, 10vw, 8rem); }
+  .container-narrow { max-width: 72ch; margin-inline: auto; }
+  .container-wide { max-width: 80rem; margin-inline: auto; }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
